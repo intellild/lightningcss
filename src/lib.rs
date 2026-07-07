@@ -11347,6 +11347,201 @@ mod tests {
   }
 
   #[test]
+  fn test_minify_trie_merges_nested_prefixes() {
+    minify_test(
+      r#"
+        @media (hover) {
+          @supports (display: grid) {
+            .foo {
+              color: red;
+            }
+          }
+        }
+
+        @media (hover) {
+          @supports (display: grid) {
+            .foo {
+              background: blue;
+            }
+          }
+        }
+      "#,
+      "@media (hover){@supports (display:grid){.foo{color:red;background:#00f}}}",
+    );
+  }
+
+  #[test]
+  fn test_minify_trie_uses_normalized_media_keys() {
+    minify_test(
+      r#"
+        @media (min-width: 900px) {
+          .foo {
+            color: red;
+          }
+        }
+
+        @media (width >= 900px) {
+          .foo {
+            background: blue;
+          }
+        }
+      "#,
+      "@media (width>=900px){.foo{color:red;background:#00f}}",
+    );
+  }
+
+  #[test]
+  fn test_minify_trie_preserves_nested_declaration_order() {
+    minify_test(
+      r#"
+        .foo {
+          color: red;
+
+          @media (min-width: 900px) {
+            color: blue;
+          }
+        }
+
+        .foo {
+          background: green;
+        }
+      "#,
+      ".foo{color:red;@media (width>=900px){color:#00f}background:green}",
+    );
+  }
+
+  #[test]
+  fn test_minify_trie_declaration_sets_keep_safe_overwrites() {
+    minify_test(
+      r#"
+        @media (hover) {
+          .foo {
+            color: red;
+          }
+        }
+
+        @media (hover) {
+          .foo {
+            color: blue;
+            color: green !important;
+          }
+        }
+
+        @media (hover) {
+          .foo {
+            color: yellow !important;
+          }
+        }
+      "#,
+      "@media (hover){.foo{color:#00f;color:#ff0!important}}",
+    );
+  }
+
+  #[test]
+  fn test_minify_trie_declaration_sets_preserve_shorthand_order() {
+    minify_test(
+      r#"
+        @media (hover) {
+          .foo {
+            margin-left: 1px;
+          }
+        }
+
+        @media (hover) {
+          .foo {
+            margin: 2px;
+          }
+        }
+
+        @media (hover) {
+          .foo {
+            margin-left: 3px;
+          }
+        }
+      "#,
+      "@media (hover){.foo{margin:2px 2px 2px 3px}}",
+    );
+  }
+
+  #[test]
+  fn test_minify_trie_does_not_merge_across_siblings() {
+    minify_test(
+      r#"
+        @media (hover) {
+          .foo {
+            color: red;
+          }
+        }
+
+        .foo {
+          color: blue;
+        }
+
+        @media (hover) {
+          .foo {
+            color: green;
+          }
+        }
+      "#,
+      "@media (hover){.foo{color:red}}.foo{color:#00f}@media (hover){.foo{color:green}}",
+    );
+  }
+
+  #[test]
+  fn test_minify_trie_merges_additional_at_rule_nodes() {
+    minify_test(
+      r#"
+        @scope (.root) {
+          .foo {
+            color: red;
+          }
+        }
+
+        @scope (.root) {
+          .foo {
+            background: blue;
+          }
+        }
+      "#,
+      "@scope(.root){.foo{color:red;background:#00f}}",
+    );
+
+    minify_test(
+      r#"
+        @starting-style {
+          .foo {
+            color: red;
+          }
+        }
+
+        @starting-style {
+          .foo {
+            background: blue;
+          }
+        }
+      "#,
+      "@starting-style{.foo{color:red;background:#00f}}",
+    );
+
+    minify_test(
+      r#"
+        @-moz-document url-prefix() {
+          .foo {
+            color: red;
+          }
+        }
+
+        @-moz-document url-prefix() {
+          .foo {
+            background: blue;
+          }
+        }
+      "#,
+      "@-moz-document url-prefix(){.foo{color:red;background:#00f}}",
+    );
+  }
+
+  #[test]
   fn test_opacity() {
     minify_test(".foo { opacity: 0 }", ".foo{opacity:0}");
     minify_test(".foo { opacity: 0% }", ".foo{opacity:0}");

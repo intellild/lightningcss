@@ -60,6 +60,8 @@ pub mod unknown;
 pub mod view_transition;
 pub mod viewport;
 
+mod trie_minify;
+
 use self::font_feature_values::FontFeatureValuesRule;
 use self::font_palette_values::FontPaletteValuesRule;
 use self::layer::{LayerBlockRule, LayerStatementRule};
@@ -546,6 +548,10 @@ impl<'i, T: Clone> CssRuleList<'i, T> {
     context: &mut MinifyContext<'_, 'i>,
     parent_is_unused: bool,
   ) -> Result<(), MinifyError> {
+    if self.0.len() > 1 {
+      trie_minify::merge_rule_list(self, context)?;
+    }
+
     let mut keyframe_rules = HashMap::new();
     let mut layer_rules = HashMap::new();
     let mut has_layers = false;
