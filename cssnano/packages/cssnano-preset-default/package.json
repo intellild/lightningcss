@@ -1,0 +1,63 @@
+{
+  "name": "cssnano-preset-default",
+  "version": "8.0.2",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "description": "Safe defaults for cssnano which require minimal configuration.",
+  "files": [
+    "LICENSE-MIT",
+    "src",
+    "types"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "browserslist": "^4.28.2",
+    "cssnano-utils": "workspace:^",
+    "postcss-calc": "^10.1.1",
+    "postcss-colormin": "workspace:^",
+    "postcss-convert-values": "workspace:^",
+    "postcss-discard-comments": "workspace:^",
+    "postcss-discard-duplicates": "workspace:^",
+    "postcss-discard-empty": "workspace:^",
+    "postcss-discard-overridden": "workspace:^",
+    "postcss-merge-longhand": "workspace:^",
+    "postcss-merge-rules": "workspace:^",
+    "postcss-minify-font-values": "workspace:^",
+    "postcss-minify-gradients": "workspace:^",
+    "postcss-minify-params": "workspace:^",
+    "postcss-minify-selectors": "workspace:^",
+    "postcss-normalize-charset": "workspace:^",
+    "postcss-normalize-display-values": "workspace:^",
+    "postcss-normalize-positions": "workspace:^",
+    "postcss-normalize-repeat-style": "workspace:^",
+    "postcss-normalize-string": "workspace:^",
+    "postcss-normalize-timing-functions": "workspace:^",
+    "postcss-normalize-unicode": "workspace:^",
+    "postcss-normalize-url": "workspace:^",
+    "postcss-normalize-whitespace": "workspace:^",
+    "postcss-ordered-values": "workspace:^",
+    "postcss-reduce-initial": "workspace:^",
+    "postcss-reduce-transforms": "workspace:^",
+    "postcss-svgo": "workspace:^",
+    "postcss-unique-selectors": "workspace:^"
+  },
+  "author": {
+    "name": "Ben Briggs",
+    "email": "beneb.info@gmail.com",
+    "url": "http://beneb.info"
+  },
+  "repository": "cssnano/cssnano",
+  "homepage": "https://github.com/cssnano/cssnano",
+  "bugs": {
+    "url": "https://github.com/cssnano/cssnano/issues"
+  },
+  "engines": {
+    "node": "^22.11.0 || ^24.11.0 || >=26.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.5.15"
+  },
+  "peerDependencies": {
+    "postcss": "^8.5.15"
+  }
+}

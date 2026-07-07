@@ -1,0 +1,50 @@
+# Package manager
+node_modules
+
+# Build
+dist
+_webpackOutput
+tsconfig.tsbuildinfo
+
+# Generated metadata
+site/src/docs/docs.11tydata.json
+
+# Cache
+.cache
+.eslintcache
+
+# Testing
+.nyc_output
+coverage
+lcov.info
+
+# Benchmarks
+bench-results
+
+# Env
+.env.local
+.env.*.local
+
+# Logging
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Editor
+.idea
+.vscode
+.history
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated
+.DS_Store
+
+# Generated website files
+site/_site/js

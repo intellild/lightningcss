@@ -1,0 +1,680 @@
+# Change Log
+
+## 8.0.2
+
+### Patch Changes
+
+- chore: update the postcss peer dependency
+- Updated dependencies [b245a0b]
+- Updated dependencies [3bf3f4d]
+  - cssnano-preset-default@8.0.2
+  - postcss-discard-unused@8.0.1
+  - postcss-reduce-idents@8.0.1
+  - postcss-merge-idents@8.0.1
+  - postcss-zindex@8.0.1
+
+## 8.0.1
+
+### Patch Changes
+
+- fix(postcss-minify-selectors): avoid folding some selectors incorrectly
+- Updated dependencies
+  - cssnano-preset-default@8.0.1
+
+## 8.0.0
+
+### Major Changes
+
+- ea8e33a: chore: drop Node.js 20 support
+
+  Node.js 20 has reached end of life.
+
+- d7c57da: Removed `cssDeclarationSorter` from the `default` preset. It remains enabled in
+  the `advanced` preset.
+
+  ## Motivation
+
+  The plugin can cause breakages without notice whenever a new CSS longhand
+  property is released to browsers if it happens to cause a conflict with another
+  longhand property. To ensure safety and predictability, it is no longer enabled
+  by default.
+
+  ## How to Update
+
+  If you rely on declaration sorting, you can switch to the `advanced` preset or
+  explicitly enable `cssDeclarationSorter` in your configuration.
+
+### Patch Changes
+
+- aa11a12: chore: update PostCSS
+- Updated dependencies [aa11a12]
+- Updated dependencies [ea8e33a]
+- Updated dependencies [d7c57da]
+  - cssnano-preset-default@8.0.0
+  - postcss-discard-unused@8.0.0
+  - postcss-reduce-idents@8.0.0
+  - postcss-merge-idents@8.0.0
+  - postcss-zindex@8.0.0
+
+## 7.0.16
+
+### Patch Changes
+
+- 0005443: fix(postcss-minify-selectors): fix wrong behaviour when merging into is()
+- 7e56dba: fix: update postcss
+- Updated dependencies [0005443]
+- Updated dependencies [7e56dba]
+  - cssnano-preset-default@7.0.16
+  - postcss-discard-unused@7.0.7
+  - postcss-reduce-idents@7.0.4
+  - postcss-merge-idents@7.0.3
+  - postcss-zindex@7.0.3
+
+## 7.0.15
+
+### Patch Changes
+
+- fix: publish all dependencies with attestations
+- Updated dependencies
+  - cssnano-preset-default@7.0.15
+
+## 7.0.14
+
+### Patch Changes
+
+- 322ad33: fix: update postcss peer dependency
+- Updated dependencies [322ad33]
+  - cssnano-preset-default@7.0.14
+  - postcss-discard-unused@7.0.6
+  - postcss-reduce-idents@7.0.3
+  - postcss-merge-idents@7.0.2
+  - postcss-zindex@7.0.2
+
+## 7.0.13
+
+### Patch Changes
+
+- 5cb8b09: fix: udpate browserslist
+- Updated dependencies [5cb8b09]
+- Updated dependencies [9e615cc]
+  - cssnano-preset-default@7.0.13
+  - postcss-reduce-idents@7.0.2
+
+## 7.0.12
+
+### Patch Changes
+
+- fix: improve color conversion precision
+- Updated dependencies
+  - cssnano-preset-default@7.0.12
+
+## 7.0.11
+
+### Patch Changes
+
+- c3e537a: fix: update postcss-selector-parser
+- 5b9af42: fix: update browserslist and autoprefixer
+- Updated dependencies [c3e537a]
+- Updated dependencies [5b9af42]
+  - cssnano-preset-default@7.0.11
+  - postcss-discard-unused@7.0.5
+
+## 7.0.10
+
+### Patch Changes
+
+- 72dd9c9: fix: update browserslist
+- db8e1ee: fix: update browserslist
+- Updated dependencies [72dd9c9]
+- Updated dependencies [db8e1ee]
+  - cssnano-preset-default@7.0.10
+
+## 7.0.9
+
+### Patch Changes
+
+- fix: do not strip % sign inside linear()
+- Updated dependencies
+  - cssnano-preset-default@7.0.9
+
+## 7.0.8
+
+### Patch Changes
+
+- 906a785: fix: update browserslist
+- Updated dependencies [906a785]
+  - cssnano-preset-default@7.0.8
+
+## 7.0.7
+
+### Patch Changes
+
+- 2f03871: fix: update lilconfig and browserslist
+- 171b669: chore: update dependencies to latest minor version
+- 20f4eb6: fix: update browserslist
+- 5672148: fix: update PostCSS peer dependency to version without vulnerabilities
+- Updated dependencies [2f03871]
+- Updated dependencies [171b669]
+- Updated dependencies [4772407]
+- Updated dependencies [20f4eb6]
+- Updated dependencies [5672148]
+  - cssnano-preset-default@7.0.7
+  - postcss-discard-unused@7.0.4
+  - postcss-reduce-idents@7.0.1
+  - postcss-merge-idents@7.0.1
+  - postcss-zindex@7.0.1
+
+## 7.0.6
+
+### Patch Changes
+
+- Updated dependencies [024ddef]
+- Updated dependencies [1d65a10]
+  - cssnano-preset-default@7.0.6
+  - postcss-discard-unused@7.0.3
+
+## 7.0.5
+
+### Patch Changes
+
+- dff5c42: chore: update browserslist and postcss-selector-parser
+- f14a898: chore: update all dependencies
+- Updated dependencies [dff5c42]
+- Updated dependencies [f14a898]
+  - cssnano-preset-default@7.0.5
+  - postcss-discard-unused@7.0.2
+
+## 7.0.4
+
+### Patch Changes
+
+- cssnano-preset-default@7.0.4
+
+## 7.0.3
+
+### Patch Changes
+
+- 0c85fa9: fix: update Browserslist version
+- Updated dependencies [0c85fa9]
+- Updated dependencies [13fb841]
+- Updated dependencies [08989b0]
+  - cssnano-preset-default@7.0.3
+
+## 7.0.2
+
+### Patch Changes
+
+- Updated dependencies [c14b9f5]
+  - postcss-discard-unused@7.0.1
+  - cssnano-preset-default@7.0.2
+
+## 7.0.1
+
+### Patch Changes
+
+- Updated dependencies [2a26e29]
+  - cssnano-preset-default@7.0.1
+
+## 7.0.0
+
+### Major Changes
+
+- 0d10597: chore: drop support for Node.js 14 and 16
+
+### Patch Changes
+
+- Updated dependencies [0d10597]
+  - cssnano-preset-default@7.0.0
+  - postcss-discard-unused@7.0.0
+  - postcss-reduce-idents@7.0.0
+  - postcss-merge-idents@7.0.0
+  - postcss-zindex@7.0.0
+
+## 6.1.2
+
+### Patch Changes
+
+- fix(cssnano-preset-default): update css-declaration-sorter
+- 2f3fb50: chore: update autoprefixer
+- Updated dependencies
+  - cssnano-preset-default@6.1.2
+
+## 6.1.1
+
+### Patch Changes
+
+- Updated dependencies [0856f86]
+  - postcss-discard-unused@6.0.5
+  - cssnano-preset-default@6.1.1
+
+## 6.1.0
+
+### Minor Changes
+
+- feat: add preset and plugin options for browserslist
+
+### Patch Changes
+
+- enable “go to definition” via declaration maps
+- fix: add missing type declarations to plugins with options
+- Updated dependencies
+  - cssnano-preset-default@6.1.0
+  - postcss-discard-unused@6.0.4
+  - postcss-merge-idents@6.0.3
+  - postcss-reduce-idents@6.0.3
+  - postcss-zindex@6.0.2
+
+## 6.0.5
+
+### Patch Changes
+
+- 83d3268: chore: update autoprefixer and browerslist
+  - cssnano-preset-default@6.0.5
+
+## 6.0.4
+
+### Patch Changes
+
+- Updated dependencies [3757056]
+  - postcss-discard-unused@6.0.3
+  - postcss-merge-idents@6.0.2
+  - cssnano-preset-default@6.0.4
+
+## 6.0.3
+
+### Patch Changes
+
+- 9c6b0bc: fix(cssnano-preset-default): do not sort unknown properties
+- 26bbbd3: chore: update minimum browserslist version to 4.22.2
+- 26bbbd3: chore: update postcss-selector-parser to 6.0.13
+- Updated dependencies [9c6b0bc]
+- Updated dependencies [f233b22]
+- Updated dependencies [26bbbd3]
+- Updated dependencies [1ead72d]
+  - cssnano-preset-default@6.0.3
+  - postcss-discard-unused@6.0.2
+
+## 6.0.2
+
+### Patch Changes
+
+- 18331a6: fix: update cssnano peer dependency to 8.4.31 to avoid security issue
+- 18331a6: fix: update postcss-calc to 9.0.1 to solve disappearing expressions inside two brackets
+- 18331a6: deps(postcss-svgo): update SVGO to 3.0.5 and update doc
+- 18331a6: chore: update css-declaration-sorter
+- 18331a6: fix(postcss-minify-selectors): prevent mangling of timeline range names
+- 18331a6: fix(postcss-convert-values): keep percent unit in @Property
+- Updated dependencies [18331a6]
+  - cssnano-preset-default@6.0.2
+  - postcss-discard-unused@6.0.1
+  - postcss-merge-idents@6.0.1
+  - postcss-reduce-idents@6.0.2
+  - postcss-zindex@6.0.1
+
+## 6.0.1
+
+### Patch Changes
+
+- fix(postcss-reduce-idents): minify grid line names correctly
+- Updated dependencies
+  - cssnano-preset-default@6.0.1
+  - postcss-reduce-idents@6.0.1
+
+## 6.0.0
+
+### Major Changes
+
+- ca9d3f55: chore: bump node versions for packages depending on svgo
+- ca9d3f55: Switch minimum supported Node version to 14 for all packages
+
+### Patch Changes
+
+- Updated dependencies [ca9d3f55]
+- Updated dependencies [ca9d3f55]
+  - cssnano-preset-default@6.0.0
+  - postcss-discard-unused@6.0.0
+  - postcss-reduce-idents@6.0.0
+  - postcss-merge-idents@6.0.0
+  - postcss-zindex@6.0.0
+
+## 5.3.10
+
+### Patch Changes
+
+- fix(postcsss-reduce-initial): fix mask-repeat conversion
+  fix(postcss-colormin): don't minify colors in src declarations
+  fix(postcss-merge-rules): do not merge conflicting flex and border properties
+- Updated dependencies
+  - cssnano-preset-default@5.2.14
+
+## 5.3.9
+
+### Patch Changes
+
+- fix: update autoprefixer and browserslist
+- fix(postcss-reduce-initial): improve initial properties data
+- Updated dependencies
+  - cssnano-preset-default@5.2.13
+
+## 5.3.8
+
+### Patch Changes
+
+- fix: preserve hyphenated property case
+- fix: ensure sorting properties does not break the output
+- fix: recognize 'constant' as a function
+- Updated dependencies
+  - cssnano-preset-default@5.2.12
+
+## 5.3.7
+
+### Patch Changes
+
+- fix: preserve constant values
+- Updated dependencies
+  - cssnano-preset-default@5.2.11
+
+## 5.3.6
+
+### Patch Changes
+
+- chore: update TypeScript and improve types
+- fix: preserve similar nested selectors
+- Updated dependencies
+  - cssnano-preset-default@5.2.10
+
+## 5.3.5
+
+### Patch Changes
+
+- fix: preserve more color function fallbacks
+- Updated dependencies
+  - cssnano-preset-default@5.2.9
+
+## 5.3.4
+
+### Patch Changes
+
+- postcss-convert-values: preserve percentage sign on IE 11
+- postcss-minify-params: refactor
+- Updated dependencies
+  - cssnano-preset-default@5.2.8
+
+## 5.3.3
+
+### Patch Changes
+
+- fix: update postcss-merge-longhand. It was skipped by mistake in the previous release.
+- Updated dependencies
+  - cssnano-preset-default@5.2.7
+
+## 5.3.2
+
+### Patch Changes
+
+- fix: preserve border color when merging border properties
+- Updated dependencies
+  - cssnano-preset-default@5.2.6
+
+## 5.3.1
+
+### Patch Changes
+
+- fix: correct package.json dependency version specifier
+- Updated dependencies
+  - cssnano-preset-default@5.2.5
+  - postcss-merge-idents@5.1.1
+
+## 5.3.0
+
+### Minor Changes
+
+- feature: reduce grid-row and grid-column properties
+
+### Patch Changes
+
+- Updated dependencies
+  - postcss-reduce-idents@5.2.0
+
+## 5.2.5
+
+### Patch Changes
+
+- fix: preserve custom property case
+- Updated dependencies
+  - cssnano-preset-default@5.2.4
+
+## 5.2.4
+
+### Patch Changes
+
+- fix: do not merge declarations containing custom properties when it might create invalid declarations
+- Updated dependencies
+  - cssnano-preset-default@5.2.3
+
+## 5.2.3
+
+### Patch Changes
+
+- fix: preserve empty custom properties and ensure they work in Chrome
+- Updated dependencies
+  - cssnano-preset-default@5.2.2
+
+## 5.2.2
+
+### Patch Changes
+
+- fix: remove comments with PostCSS 8.4.6 and greater
+- Updated dependencies
+  - cssnano-preset-default@5.2.1
+
+## 5.2.1
+
+### Patch Changes
+
+- fix: improve type declarations
+
+## 5.2.0
+
+### Minor Changes
+
+- feature: add TypeScript type declarations
+
+### Patch Changes
+
+- Updated dependencies
+  - cssnano-preset-default@5.2.0
+  - postcss-discard-unused@5.1.0
+  - postcss-merge-idents@5.1.0
+  - postcss-reduce-idents@5.1.0
+  - postcss-zindex@5.1.0
+
+## 5.1.12
+
+### Patch Changes
+
+- Publish untranspiled CommonJS source
+- Updated dependencies
+  - cssnano-preset-default@5.1.12
+  - postcss-discard-unused@5.0.3
+  - postcss-merge-idents@5.0.3
+  - postcss-reduce-idents@5.0.3
+  - postcss-zindex@5.0.2
+
+## 5.1.11
+
+### Patch Changes
+
+- refactor: replace natural sort with built-in array sort
+- Updated dependencies
+  - postcss-discard-unused@5.0.2
+  - postcss-reduce-idents@5.0.2
+  - cssnano-preset-default@5.1.11
+
+## 5.1.10 (2022-01-07)
+
+### Patch Changes
+
+- refactor: remove getMatch function from cssnano-utils
+
+  The getMatch function allows nested arrays to emulate a map.
+  It is better to replace this function with a regular Map().
+  It's unlikely this function is used outside of cssnano as it requires
+  a very specific nested array struture.
+
+- fix: update postcss-calc to 8.2
+
+  Remove a crash when postcss-calc cannot parse the value
+
+- Updated dependencies
+  - cssnano-preset-default@5.1.10
+  - postcss-merge-idents@5.0.2
+
+## 5.1.9 (2021-12-16)
+
+### Patch Changes
+
+- chore(postcss-normalize-url): reduce dependencies ([#1255](https://github.com/cssnano/cssnano/pull/1255))([a4267dedcd6](https://github.com/cssnano/cssnano/commit/a4267dedcd6d41ece45a0dfc5a73ea4b9e4ae028))
+- fix(postcss-colormin): accept configuration options ([#1263](https://github.com/cssnano/cssnano/pull/1263))([3b38038007](https://github.com/cssnano/cssnano/commit/3b38038007bfd8761d84a9e35f0191b56e5b50d7))
+- Updated dependencies
+  - cssnano-preset-default@5.1.9
+
+## 5.1.8 (2021-11-27)
+
+### Bug fixes
+
+- fix(postcss-reduce-initial): update initial values data ([#1242](https://github.com/cssnano/cssnano/pull/1242)) ([c6e9f00b785](https://github.com/cssnano/cssnano/commit/c6e9f00b785d85df0d92a110ec95a14fd98adcc9))
+- Updated dependencies
+  - cssnano-preset-default@5.1.8
+
+# 5.1.7 (2021-11-16)
+
+### Bug fixes
+
+- c38f14c3ce3d0b: **postcss-normalize-url**: avoid changing parameter encoding
+
+### Chore
+
+- 31d5c07dc07a4: refactor: drop one-liner dependencies
+- 07172825ffbb4f4: **postcss-merge-longhand**: drop css-color-names dependency
+
+# 5.1.6 (2021-11-05)
+
+### Bug fixes
+
+- **postcss-merge-longhand:** prevent crash in some situations ([#1222](https://github.com/cssnano/cssnano/pull/1222)) ([83009a](https://github.com/cssnano/cssnano/commit/83009a04e7200c80d4dfc478881eb1b231d2548f))
+
+# 5.1.5 (2021-11-01)
+
+### Bug fixes
+
+- **cssnano-preset-advanced:** update autoprefixer ([#1213](https://github.com/cssnano/cssnano/pull/1213)) ([f19932](https://github.com/cssnano/cssnano/commit/f199323a8368546d9632112d381419930106e384))
+
+- **postcss-svgo:** normalize SVG with escaped quote characters ([#1200](https://github.com/cssnano/cssnano/pull/1200)) ([4ef5e41](https://github.com/cssnano/cssnano/commit/4ef5e41a6c61a23094001da82a76321ca746b22f))
+
+- **postcss-convert-values:** preserve percentage-only properties ([#1212](https://github.com/cssnano/cssnano/pull/1212)) ([8f3453](https://github.com/cssnano/cssnano/commit/8f345385b210cf85e9d591382d387f76ca4b0f64))
+
+- **postcss-minify-gradients:** handle 2 color-stop-length in linear gradient ([#1215](https://github.com/cssnano/cssnano/pull/1215)) ([8bb7ba6c](https://github.com/cssnano/cssnano/commit/8bb7ba6c1733fd12122589169d847b1a1212a6b5))
+
+### Chore
+
+- **postcss-colormin:** use colord plugin for color minification ([#1207](https://github.com/cssnano/cssnano/pull/1207)) ([3dbaa04](https://github.com/cssnano/cssnano/commit/3dbaa04addfa2f18375262377e172b03819dc2c0))
+
+# 5.1.4 (2021-08-18)
+
+## Chore
+
+- **postcss-minify-gradients:** remove extra dependencies ([#1181](https://github.com/cssnano/cssnano/pull/1181)) ([50eb53](https://github.com/cssnano/cssnano/commit/50eb53e63b6eaae598ae4e51d02255ec8dcc9c8f))
+
+# 5.1.3 (2021-06-09)
+
+### Bug Fixes
+
+**postcss-normalize-url**: bump normalize-url dependency to 6.0.1 (#1142)
+([b60f54bed](https://github.com/cssnano/cssnano/commit/b60f54bedafe3781ff58f0888ab45ff5c56aee09))
+
+**postcss-ordered-values**: preserve columns count (#1144)
+([9acd6a2fe3e](https://github.com/cssnano/cssnano/commit/9acd6a2fe3e188a5f29fef91cf406495fa74a877))
+
+# 5.1.1 (2021-05-21)
+
+### Bug Fixes
+
+- **postcss-colormin:** Strict color parsing ([#1122](https://github.com/cssnano/cssnano/issues/1122)) ([32771da](https://github.com/cssnano/cssnano/commit/32771da46ee94f07a6907ec47701189f90ad2ec0))
+- **postcss-colormin:** fix ERR_PACKAGE_PATH_NOT_EXPORTED ([#1110](https://github.com/cssnano/cssnano/issues/1110)) ([8a31ca38796](https://github.com/cssnano/cssnano/commit/8a31ca38796e12e6fe52620cf8a545cb058fe295))
+
+# [5.1.0](https://github.com/cssnano/cssnano/compare/cssnano-preset-advanced@5.0.0...cssnano-preset-advanced@5.1.0) (2021-05-19)
+
+### Bug Fixes
+
+- **postcss-merge-rules:** add some missing known pseudo classes. ([#1099](https://github.com/cssnano/cssnano/issues/1099)) ([4d7fe36](https://github.com/cssnano/cssnano/commit/4d7fe367bebab86c7b5664ed4621ee7586ca7d86))
+- **postcss-merge-rules:** prevent breaking rule merges ([#1072](https://github.com/cssnano/cssnano/issues/1072)) ([c5e0a5e](https://github.com/cssnano/cssnano/commit/c5e0a5eac171089ae994fcba21d9c565fb462577)), closes [#999](https://github.com/cssnano/cssnano/issues/999)
+
+### Features
+
+- **postcss-colormin:** switch to colord and solve multiple issues ([#1107](https://github.com/cssnano/cssnano/issues/1107)) ([a7f0be4](https://github.com/cssnano/cssnano/commit/a7f0be4acc640aab89cace53a720b3d59b6f7b4f)), closes [#819](https://github.com/cssnano/cssnano/issues/819) [#1042](https://github.com/cssnano/cssnano/issues/1042) [#819](https://github.com/cssnano/cssnano/issues/819) [#771](https://github.com/cssnano/cssnano/issues/771)
+
+## [5.0.1](https://github.com/cssnano/cssnano/compare/cssnano-preset-advanced@5.0.0...cssnano-preset-advanced@5.0.1) (2021-04-26)
+
+**Note:** Version bump only for package cssnano-preset-advanced
+
+# [5.0.0](https://github.com/cssnano/cssnano/compare/cssnano-preset-advanced@5.0.0-rc.2...cssnano-preset-advanced@5.0.0) (2021-04-06)
+
+**Note:** Version bump only for package cssnano-preset-advanced
+
+# [5.0.0-rc.2](https://github.com/cssnano/cssnano/compare/cssnano-preset-advanced@5.0.0-rc.1...cssnano-preset-advanced@5.0.0-rc.2) (2021-03-15)
+
+**Note:** Version bump only for package cssnano-preset-advanced
+
+# [5.0.0-rc.1](https://github.com/cssnano/cssnano/compare/cssnano-preset-advanced@5.0.0-rc.0...cssnano-preset-advanced@5.0.0-rc.1) (2021-03-04)
+
+**Note:** Version bump only for package cssnano-preset-advanced
+
+# 5.0.0-rc.0 (2021-02-19)
+
+### Bug Fixes
+
+- **postcss-convert-values:** prevent zero units from being dropped in line-height. ([#801](https://github.com/cssnano/cssnano/issues/801)) ([d781855](https://github.com/cssnano/cssnano/commit/d78185567ae5ebcde0469cf0e55145a7a3130d3e))
+- **postcss-merge-rules:** don't change specificity of prefixed properties ([#723](https://github.com/cssnano/cssnano/issues/723)) ([863cf2b](https://github.com/cssnano/cssnano/commit/863cf2b3470d3172523a3165dc368abcfa18809c))
+- **postcss-normalize-positions:** correct optimize math (`calc` and etc) and variable functions (`var` and `env`) ([#750](https://github.com/cssnano/cssnano/issues/750)) ([a81e8df](https://github.com/cssnano/cssnano/commit/a81e8dfc1ad26067d5a9efab8081072cd4b15c44))
+
+### chore
+
+- minimum require version of node is 10.13 ([#871](https://github.com/cssnano/cssnano/issues/871)) ([28bda24](https://github.com/cssnano/cssnano/commit/28bda243e32ce3ba89b3c358a5f78727b3732f11))
+
+### Features
+
+- css declaration sorter ([#855](https://github.com/cssnano/cssnano/issues/855)) ([613d562](https://github.com/cssnano/cssnano/commit/613d562ae79e7e169c80b523b7c2c9b0093bc1d8))
+- migrate to PostCSS 8 ([#975](https://github.com/cssnano/cssnano/issues/975)) ([40b82dc](https://github.com/cssnano/cssnano/commit/40b82dca7f53ac02cd4fe62846dec79b898ccb49))
+- **postcss-merge-rules:** merge at-rules ([#722](https://github.com/cssnano/cssnano/issues/722)) ([8d4610a](https://github.com/cssnano/cssnano/commit/8d4610a6391ddab29bcb08ef0522d0b7ce2d6582))
+
+### BREAKING CHANGES
+
+- minimum supported `postcss` version is `8.2.1`
+- minimum require version of node is 10.13
+
+## 4.1.9 (2019-02-12)
+
+## 4.1.7 (2018-10-22)
+
+## 4.1.6 (2018-10-22)
+
+## 4.1.5 (2018-10-17)
+
+## 4.1.4 (2018-09-27)
+
+## 4.1.3 (2018-09-25)
+
+## 4.1.2 (2018-09-25)
+
+## 4.1.1 (2018-09-24)
+
+### Bug Fixes
+
+- parse error with iPhone X feature ([#614](https://github.com/cssnano/cssnano/issues/614)) ([a3704a7](https://github.com/cssnano/cssnano/commit/a3704a76a631b1cd907ab0c0a8637a622769676d))
+- **postcss-merge-longhand:** not mangle border output ([#555](https://github.com/cssnano/cssnano/issues/555)) ([9a70605](https://github.com/cssnano/cssnano/commit/9a706050b621e7795a9bf74eb7110b5c81804ffe)), closes [#553](https://github.com/cssnano/cssnano/issues/553) [#554](https://github.com/cssnano/cssnano/issues/554)
+- **postcss-merge-longhand:** Should not mangle borders ([#579](https://github.com/cssnano/cssnano/issues/579)) ([#583](https://github.com/cssnano/cssnano/issues/583)) ([4d3b3f8](https://github.com/cssnano/cssnano/commit/4d3b3f8fa5a389329989b13f85f3523e56c81435))
+
+### Features
+
+- **postcss-ordered-values:** support ordering animation values ([#574](https://github.com/cssnano/cssnano/issues/574)) ([17ec039](https://github.com/cssnano/cssnano/commit/17ec039dfbe7f596df12f5d5889bf3e6cd32afd6))

@@ -189,7 +189,7 @@ fn generated_fixture(component_count: usize, utility_count: usize) -> String {
 }
 
 fn conditional_run_fixture(rule_count: usize) -> String {
-  let mut css = String::with_capacity(rule_count * 720);
+  let mut css = String::with_capacity(rule_count * 5200);
 
   for i in 0..rule_count {
     let hue = (i * 17) % 360;
@@ -239,6 +239,308 @@ fn conditional_run_fixture(rule_count: usize) -> String {
 }}
 "#,
       padding = 12 + (i % 10),
+    )
+    .unwrap();
+  }
+
+  writeln!(
+    css,
+    r#"
+@media (width >= 960px) {{
+  .normalized-media-anchor {{
+    display: grid;
+  }}
+}}
+"#
+  )
+  .unwrap();
+
+  for i in 0..rule_count {
+    writeln!(
+      css,
+      r#"
+
+@media (min-width: 960px) {{
+  .normalized-media-card-{i} {{
+    margin-inline: {margin}px;
+    padding-block: {padding}px;
+  }}
+}}
+"#,
+      margin = 4 + (i % 8),
+      padding = 8 + (i % 12),
+    )
+    .unwrap();
+  }
+
+  writeln!(
+    css,
+    r#"
+@media (width >= 900px) {{
+  @supports (display: grid) {{
+    @container (min-width: 42rem) {{
+      .nested-prefix-anchor {{
+        display: grid;
+      }}
+    }}
+  }}
+}}
+"#
+  )
+  .unwrap();
+
+  for i in 0..rule_count {
+    let hue = (i * 23) % 360;
+    writeln!(
+      css,
+      r#"
+
+@media (min-width: 900px) {{
+  @supports (display: grid) {{
+    @container (min-width: 42rem) {{
+      .nested-prefix-card-{i} {{
+        background: hsl({hue}deg 70% 96%);
+        border-color: hsl({hue}deg 45% 62%);
+      }}
+    }}
+  }}
+}}
+"#
+    )
+    .unwrap();
+  }
+
+  for i in 0..rule_count {
+    let hue = (i * 31) % 360;
+    writeln!(
+      css,
+      r#"
+
+@media (min-width: 1200px) {{
+  @supports (display: grid) {{
+    .alternating-a-{i} {{
+      color: hsl({hue}deg 62% 32%);
+    }}
+  }}
+}}
+
+@media (min-width: 1200px) {{
+  @container (min-width: 56rem) {{
+    .alternating-b-{i} {{
+      padding-inline: {padding}px;
+    }}
+  }}
+}}
+
+@supports (container-type: inline-size) {{
+  @container (min-width: 56rem) {{
+    .alternating-c-{i} {{
+      gap: {gap}px;
+    }}
+  }}
+}}
+"#,
+      padding = 10 + (i % 8),
+      gap = 6 + (i % 10),
+    )
+    .unwrap();
+  }
+
+  for i in 0..rule_count {
+    writeln!(
+      css,
+      r#"
+
+@media (min-width: 1280px) {{
+  .separated-media-a-{i} {{
+    color: hsl({hue_a}deg 64% 32%);
+  }}
+}}
+
+.separated-rule-{i} {{
+  color: hsl({hue_b}deg 48% 28%);
+}}
+
+@media (min-width: 1280px) {{
+  .separated-media-b-{i} {{
+    color: hsl({hue_c}deg 64% 32%);
+  }}
+}}
+"#,
+      hue_a = (i * 37) % 360,
+      hue_b = (i * 41) % 360,
+      hue_c = (i * 43) % 360,
+    )
+    .unwrap();
+  }
+
+  for i in 0..rule_count {
+    writeln!(
+      css,
+      r#"
+
+@media (width >= 1320px) {{
+  @supports (display: grid) {{
+    @container (width >= 58rem) {{
+      .normalized-deep-a-{i} {{
+        margin-block: {margin}px;
+      }}
+    }}
+  }}
+}}
+
+@media (min-width: 1320px) {{
+  @supports (display: grid) {{
+    @container (min-width: 58rem) {{
+      .normalized-deep-b-{i} {{
+        padding-block: {padding}px;
+      }}
+    }}
+  }}
+}}
+"#,
+      margin = 4 + (i % 8),
+      padding = 8 + (i % 12),
+    )
+    .unwrap();
+  }
+
+  for i in 0..rule_count {
+    writeln!(
+      css,
+      r#"
+
+.nested-equivalent-{i} {{
+  @media (min-width: 1440px) {{
+    @supports (display: grid) {{
+      @container (min-width: 64rem) {{
+        color: hsl({hue_a}deg 58% 30%);
+      }}
+    }}
+  }}
+}}
+
+@media (width >= 1440px) {{
+  @supports (display: grid) {{
+    @container (width >= 64rem) {{
+      .nested-equivalent-{i} {{
+        background: hsl({hue_b}deg 70% 94%);
+      }}
+    }}
+  }}
+}}
+"#,
+      hue_a = (i * 47) % 360,
+      hue_b = (i * 53) % 360,
+    )
+    .unwrap();
+  }
+
+  for i in 0..rule_count {
+    writeln!(
+      css,
+      r#"
+
+@media (min-width: 1536px) {{
+  @supports (display: grid) {{
+    @container (min-width: 72rem) {{
+      @media (hover: hover) {{
+        .deep-prefix-hover-{i} {{
+          transform: translateY(-1px);
+        }}
+      }}
+    }}
+  }}
+}}
+
+@media (min-width: 1536px) {{
+  @supports (display: grid) {{
+    @container (min-width: 72rem) {{
+      @supports (backdrop-filter: blur(1px)) {{
+        .deep-prefix-filter-{i} {{
+          backdrop-filter: blur({blur}px);
+        }}
+      }}
+    }}
+  }}
+}}
+"#,
+      blur = 2 + (i % 6),
+    )
+    .unwrap();
+  }
+
+  for i in 0..rule_count {
+    writeln!(
+      css,
+      r#"
+
+@media (min-width: 1024px) {{
+  @supports (container-type: inline-size) {{
+    .shared-prefix-supports-{i} {{
+      container-type: inline-size;
+    }}
+  }}
+}}
+
+@media (min-width: 1024px) {{
+  @container (min-width: 48rem) {{
+    .shared-prefix-container-{i} {{
+      gap: {gap}px;
+    }}
+  }}
+}}
+"#,
+      gap = 6 + (i % 10),
+    )
+    .unwrap();
+  }
+
+  for i in 0..rule_count {
+    writeln!(
+      css,
+      r#"
+
+@starting-style {{
+  .starting-card-{i} {{
+    opacity: 0;
+    transform: translateY({offset}px);
+  }}
+}}
+"#,
+      offset = 4 + (i % 8),
+    )
+    .unwrap();
+  }
+
+  for i in 0..rule_count {
+    writeln!(
+      css,
+      r#"
+
+@scope (.scope-root) {{
+  .scoped-card-{i} {{
+    color: hsl({hue}deg 52% 28%);
+  }}
+}}
+"#,
+      hue = (i * 29) % 360,
+    )
+    .unwrap();
+  }
+
+  for i in 0..rule_count {
+    writeln!(
+      css,
+      r#"
+
+@-moz-document url-prefix() {{
+  .document-card-{i} {{
+    border-width: {border}px;
+  }}
+}}
+"#,
+      border = 1 + (i % 4),
     )
     .unwrap();
   }

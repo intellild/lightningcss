@@ -1,0 +1,226 @@
+# Change Log
+
+## 8.0.1
+
+### Patch Changes
+
+- chore: update the postcss peer dependency
+- Updated dependencies
+  - cssnano-utils@6.0.1
+
+## 8.0.0
+
+### Major Changes
+
+- ea8e33a: chore: drop Node.js 20 support
+
+  Node.js 20 has reached end of life.
+
+### Patch Changes
+
+- aa11a12: chore: update PostCSS
+- Updated dependencies [aa11a12]
+- Updated dependencies [ea8e33a]
+  - cssnano-utils@6.0.0
+
+## 7.0.5
+
+### Patch Changes
+
+- d1780fd: fix: update @colordx/core
+- 7e56dba: fix: update postcss
+- Updated dependencies [7e56dba]
+  - cssnano-utils@5.0.3
+
+## 7.0.4
+
+### Patch Changes
+
+- 322ad33: fix: update postcss peer dependency
+- a00036c: fix: update colordx
+- Updated dependencies [322ad33]
+  - cssnano-utils@5.0.2
+
+## 7.0.3
+
+### Patch Changes
+
+- 5cb8b09: fix: udpate browserslist
+
+## 7.0.2
+
+### Patch Changes
+
+- 5f64972: Replace `colord` with `@colordx/core` as the underlying color manipulation library. `colord` has not been updated since August 2022; `colordx` is its actively maintained successor with a compatible API.
+
+  This fixes a lossiness bug in `postcss-colormin` ([#1515](https://github.com/cssnano/cssnano/issues/1515)): colors like `rgba(221, 221, 221, 0.5)` were previously converted to `hsla(0,0%,87%,.5)`, which round-trips back to `rgb(222, 222, 222)` — a visibly different color at sharp image/UI boundaries. The new output is fully lossless and picks the shortest representation.
+
+  The root cause was that `colord` rounds color values to integers at parse time, so HSL conversions accumulate rounding error. `colordx` stores values as floats, preserving exact precision through conversions and producing correct output:
+
+  ```css
+  /* Input */
+  rgba(221, 221, 221, 0.5)  →  hsla(0,0%,86.7%,.5)   /* shorter and lossless ✓ */
+  rgba(50%, 50%, 50%, 0.5)  →  hsla(0,0%,50%,.5)      /* shorter and lossless ✓ */
+  ```
+
+  Additional improvements:
+  - `oklch()`, `oklab()`, and `hwb()` values that fall within the sRGB gamut are now correctly minified in `postcss-colormin` (previously passed through unchanged)
+  - Modern CSS color formats (`oklch`, `oklab`, `hwb`, `lch`) are now correctly recognised as valid gradient color stops in `postcss-minify-gradients`
+
+## 7.0.1
+
+### Patch Changes
+
+- 5672148: fix: update PostCSS peer dependency to version without vulnerabilities
+- Updated dependencies [5672148]
+  - cssnano-utils@5.0.1
+
+## 7.0.0
+
+### Major Changes
+
+- 0d10597: chore: drop support for Node.js 14 and 16
+
+### Patch Changes
+
+- Updated dependencies [0d10597]
+  - cssnano-utils@5.0.0
+
+## 6.0.3
+
+### Patch Changes
+
+- enable “go to definition” via declaration maps
+- Updated dependencies
+  - cssnano-utils@4.0.2
+
+## 6.0.2
+
+### Patch Changes
+
+- f461389: chore: update colord version
+
+## 6.0.1
+
+### Patch Changes
+
+- 18331a6: fix: update cssnano peer dependency to 8.4.31 to avoid security issue
+- Updated dependencies [18331a6]
+  - cssnano-utils@4.0.1
+
+## 6.0.0
+
+### Major Changes
+
+- ca9d3f55: Switch minimum supported Node version to 14 for all packages
+
+### Patch Changes
+
+- Updated dependencies [ca9d3f55]
+  - cssnano-utils@4.0.0
+
+## 5.1.1
+
+### Patch Changes
+
+- fix: correct package.json dependency version specifier
+
+## 5.1.0
+
+### Minor Changes
+
+- feature: add TypeScript type declarations
+
+### Patch Changes
+
+- Updated dependencies
+  - cssnano-utils@3.1.0
+
+## 5.0.6
+
+### Patch Changes
+
+- Publish untranspiled CommonJS source
+- Updated dependencies
+  - cssnano-utils@3.0.2
+
+## 5.0.5
+
+### Patch Changes
+
+- refactor: replace array with set
+- Updated dependencies
+  - cssnano-utils@3.0.1
+
+## 5.0.4 (2022-01-07)
+
+### Patch Changes
+
+- refactor: remove getMatch function from cssnano-utils
+
+  The getMatch function allows nested arrays to emulate a map.
+  It is better to replace this function with a regular Map().
+  It's unlikely this function is used outside of cssnano as it requires
+  a very specific nested array struture.
+
+- Updated dependencies
+  - cssnano-utils@3.0.0
+
+# 5.0.3 (2021-11-01)
+
+### Bug fixes
+
+- **postcss-minify-gradients:** handle 2 color-stop-length in linear gradient ([#1215](https://github.com/cssnano/cssnano/pull/1215)) ([8bb7ba6c](https://github.com/cssnano/cssnano/commit/8bb7ba6c1733fd12122589169d847b1a1212a6b5))
+
+# 5.0.2 (2021-08-18)
+
+## Chore
+
+- **postcss-minify-gradients:** remove extra dependencies ([#1181](https://github.com/cssnano/cssnano/pull/1181)) ([50eb53](https://github.com/cssnano/cssnano/commit/50eb53e63b6eaae598ae4e51d02255ec8dcc9c8f))
+
+## [5.0.1](https://github.com/cssnano/cssnano/compare/postcss-minify-gradients@5.0.0...postcss-minify-gradients@5.0.1) (2021-05-19)
+
+**Note:** Version bump only for package postcss-minify-gradients
+
+# [5.0.0](https://github.com/cssnano/cssnano/compare/postcss-minify-gradients@5.0.0-rc.2...postcss-minify-gradients@5.0.0) (2021-04-06)
+
+**Note:** Version bump only for package postcss-minify-gradients
+
+# [5.0.0-rc.2](https://github.com/cssnano/cssnano/compare/postcss-minify-gradients@5.0.0-rc.1...postcss-minify-gradients@5.0.0-rc.2) (2021-03-15)
+
+**Note:** Version bump only for package postcss-minify-gradients
+
+# [5.0.0-rc.1](https://github.com/cssnano/cssnano/compare/postcss-minify-gradients@5.0.0-rc.0...postcss-minify-gradients@5.0.0-rc.1) (2021-03-04)
+
+**Note:** Version bump only for package postcss-minify-gradients
+
+# 5.0.0-rc.0 (2021-02-19)
+
+### Bug Fixes
+
+- **postcss-minify-gradients:** don't break gradients with `var` and `env` functions ([#735](https://github.com/cssnano/cssnano/issues/735)) ([7fabd9d](https://github.com/cssnano/cssnano/commit/7fabd9d03c81142c5854d0c0a50bee15ed86c219))
+
+### chore
+
+- minimum require version of node is 10.13 ([#871](https://github.com/cssnano/cssnano/issues/871)) ([28bda24](https://github.com/cssnano/cssnano/commit/28bda243e32ce3ba89b3c358a5f78727b3732f11))
+
+### Features
+
+- migrate to PostCSS 8 ([#975](https://github.com/cssnano/cssnano/issues/975)) ([40b82dc](https://github.com/cssnano/cssnano/commit/40b82dca7f53ac02cd4fe62846dec79b898ccb49))
+
+### BREAKING CHANGES
+
+- minimum supported `postcss` version is `8.2.1`
+- minimum require version of node is 10.13
+
+## 4.1.9 (2019-02-12)
+
+### Bug Fixes
+
+- **postcss-minify-gradients:** handle uppercase ([#706](https://github.com/cssnano/cssnano/issues/706)) ([acd5d0e](https://github.com/cssnano/cssnano/commit/acd5d0eb59e76fe62b70faad89d6ee0f76f798ef))
+
+## 4.1.1 (2018-09-24)
+
+### Bug Fixes
+
+- **postcss-merge-longhand:** not mangle border output ([#555](https://github.com/cssnano/cssnano/issues/555)) ([9a70605](https://github.com/cssnano/cssnano/commit/9a706050b621e7795a9bf74eb7110b5c81804ffe)), closes [#553](https://github.com/cssnano/cssnano/issues/553) [#554](https://github.com/cssnano/cssnano/issues/554)

@@ -1,0 +1,309 @@
+# Change Log
+
+## 8.0.1
+
+### Patch Changes
+
+- chore: update the postcss peer dependency
+- b245a0b: fix: update caniuse-api
+- 3bf3f4d: chore: update postcss-selector-parser
+- Updated dependencies
+  - cssnano-utils@6.0.1
+
+## 8.0.0
+
+### Major Changes
+
+- ea8e33a: chore: drop Node.js 20 support
+
+  Node.js 20 has reached end of life.
+
+### Patch Changes
+
+- aa11a12: chore: update PostCSS
+- Updated dependencies [aa11a12]
+- Updated dependencies [ea8e33a]
+  - cssnano-utils@6.0.0
+
+## 7.0.11
+
+### Patch Changes
+
+- 7e56dba: fix: update postcss
+- Updated dependencies [7e56dba]
+  - cssnano-utils@5.0.3
+
+## 7.0.10
+
+### Patch Changes
+
+- 322ad33: fix: update postcss peer dependency
+- Updated dependencies [322ad33]
+  - cssnano-utils@5.0.2
+
+## 7.0.9
+
+### Patch Changes
+
+- 5cb8b09: fix: udpate browserslist
+
+## 7.0.8
+
+### Patch Changes
+
+- c3e537a: fix: update postcss-selector-parser
+- c0053c8: fix(postcss-merge-rules): improve performance
+- 5b9af42: fix: update browserslist and autoprefixer
+
+## 7.0.7
+
+### Patch Changes
+
+- 72dd9c9: fix: update browserslist
+- db8e1ee: fix: update browserslist
+
+## 7.0.6
+
+### Patch Changes
+
+- 906a785: fix: update browserslist
+
+## 7.0.5
+
+### Patch Changes
+
+- 2f03871: fix: update lilconfig and browserslist
+- 171b669: chore: update dependencies to latest minor version
+- 4772407: chore: update postcss-selector-parser
+- 20f4eb6: fix: update browserslist
+- 5672148: fix: update PostCSS peer dependency to version without vulnerabilities
+- Updated dependencies [5672148]
+  - cssnano-utils@5.0.1
+
+## 7.0.4
+
+### Patch Changes
+
+- 1d65a10: fix: update postcss-selector-parser
+
+## 7.0.3
+
+### Patch Changes
+
+- dff5c42: chore: update browserslist and postcss-selector-parser
+- f14a898: chore: update all dependencies
+
+## 7.0.2
+
+### Patch Changes
+
+- 0c85fa9: fix: update Browserslist version
+
+## 7.0.1
+
+### Patch Changes
+
+- c14b9f5: chore: update postcss-selector-parser
+
+## 7.0.0
+
+### Major Changes
+
+- 0d10597: chore: drop support for Node.js 14 and 16
+
+### Patch Changes
+
+- Updated dependencies [0d10597]
+  - cssnano-utils@5.0.0
+
+## 6.1.1
+
+### Patch Changes
+
+- 0856f86: chore: update postcss-selector-parser
+
+## 6.1.0
+
+### Minor Changes
+
+- feat: add preset and plugin options for browserslist
+
+### Patch Changes
+
+- enable “go to definition” via declaration maps
+- fix: add missing type declarations to plugins with options
+- Updated dependencies
+  - cssnano-utils@4.0.2
+
+## 6.0.4
+
+### Patch Changes
+
+- 83d3268: chore: update autoprefixer and browerslist
+
+## 6.0.3
+
+### Patch Changes
+
+- f233b22: chore: update-postcss-selector-parser to 6.0.14
+- 26bbbd3: chore: update minimum browserslist version to 4.22.2
+- 26bbbd3: chore: update postcss-selector-parser to 6.0.13
+- 1ead72d: chore: update postcss-selector-parser to 6.0.15
+
+## 6.0.2
+
+### Patch Changes
+
+- 18331a6: fix: update cssnano peer dependency to 8.4.31 to avoid security issue
+- Updated dependencies [18331a6]
+  - cssnano-utils@4.0.1
+
+## 6.0.1
+
+### Patch Changes
+
+- fix(postcss-merge-rules): do not merge nested rules
+
+## 6.0.0
+
+### Major Changes
+
+- ca9d3f55: Switch minimum supported Node version to 14 for all packages
+
+### Patch Changes
+
+- Updated dependencies [ca9d3f55]
+  - cssnano-utils@4.0.0
+
+## 5.1.4
+
+### Patch Changes
+
+- fix(postcss-merge-rules): do not merge conflicting flex and border properties
+
+## 5.1.3
+
+### Patch Changes
+
+- fix: update autoprefixer and browserslist
+
+## 5.1.2
+
+### Patch Changes
+
+- chore: update TypeScript and improve types
+
+## 5.1.1
+
+### Patch Changes
+
+- fix: correct package.json dependency version specifier
+
+## 5.1.0
+
+### Minor Changes
+
+- feature: add TypeScript type declarations
+
+### Patch Changes
+
+- Updated dependencies
+  - cssnano-utils@3.1.0
+
+## 5.0.6
+
+### Patch Changes
+
+- Publish untranspiled CommonJS source
+- Updated dependencies
+  - cssnano-utils@3.0.2
+
+## 5.0.5
+
+### Patch Changes
+
+- refactor: remove implicit boolean conversion
+- Updated dependencies
+  - cssnano-utils@3.0.1
+
+## 5.0.4 (2022-01-07)
+
+### Patch Changes
+
+- refactor: remove getMatch function from cssnano-utils
+
+  The getMatch function allows nested arrays to emulate a map.
+  It is better to replace this function with a regular Map().
+  It's unlikely this function is used outside of cssnano as it requires
+  a very specific nested array struture.
+
+- Updated dependencies
+  - cssnano-utils@3.0.0
+
+# 5.0.3 (2021-11-16)
+
+### Chore
+
+- 31d5c07dc07a4: refactor: drop one-liner dependencies
+
+## 5.0.2 (2021-05-28)
+
+### Bug fixes
+
+- Check all intersections when merging rules (https://github.com/cssnano/cssnano/commit/069c4249dc10a71e0fef455bf4ebea17776dbcf2)
+
+## [5.0.1](https://github.com/cssnano/cssnano/compare/postcss-merge-rules@5.0.0...postcss-merge-rules@5.0.1) (2021-05-19)
+
+### Bug Fixes
+
+- **postcss-merge-rules:** add some missing known pseudo classes. ([#1099](https://github.com/cssnano/cssnano/issues/1099)) ([4d7fe36](https://github.com/cssnano/cssnano/commit/4d7fe367bebab86c7b5664ed4621ee7586ca7d86))
+- **postcss-merge-rules:** prevent breaking rule merges ([#1072](https://github.com/cssnano/cssnano/issues/1072)) ([c5e0a5e](https://github.com/cssnano/cssnano/commit/c5e0a5eac171089ae994fcba21d9c565fb462577)), closes [#999](https://github.com/cssnano/cssnano/issues/999)
+
+# [5.0.0](https://github.com/cssnano/cssnano/compare/postcss-merge-rules@5.0.0-rc.2...postcss-merge-rules@5.0.0) (2021-04-06)
+
+**Note:** Version bump only for package postcss-merge-rules
+
+# [5.0.0-rc.2](https://github.com/cssnano/cssnano/compare/postcss-merge-rules@5.0.0-rc.1...postcss-merge-rules@5.0.0-rc.2) (2021-03-15)
+
+**Note:** Version bump only for package postcss-merge-rules
+
+# [5.0.0-rc.1](https://github.com/cssnano/cssnano/compare/postcss-merge-rules@5.0.0-rc.0...postcss-merge-rules@5.0.0-rc.1) (2021-03-04)
+
+**Note:** Version bump only for package postcss-merge-rules
+
+# 5.0.0-rc.0 (2021-02-19)
+
+### Bug Fixes
+
+- don't unsafe merge 'all' declaration ([#872](https://github.com/cssnano/cssnano/issues/872)) ([6ea9e5d](https://github.com/cssnano/cssnano/commit/6ea9e5dcad2d8ea22be7209332ee29d352c807de))
+- focus-visible issue ([#882](https://github.com/cssnano/cssnano/issues/882)) ([4cfcaaf](https://github.com/cssnano/cssnano/commit/4cfcaaf25b162ec2b0308907a408d7dba6a354c3))
+- **merge-rules, merge-idents:** add support for nested at-rules ([#719](https://github.com/cssnano/cssnano/issues/719)) ([cdedda7](https://github.com/cssnano/cssnano/commit/cdedda7f9d67873d872add044ad34c91616579f3))
+- **postcss-merge-rules:** don't change specificity of prefixed properties ([#723](https://github.com/cssnano/cssnano/issues/723)) ([863cf2b](https://github.com/cssnano/cssnano/commit/863cf2b3470d3172523a3165dc368abcfa18809c))
+
+### chore
+
+- minimum require version of node is 10.13 ([#871](https://github.com/cssnano/cssnano/issues/871)) ([28bda24](https://github.com/cssnano/cssnano/commit/28bda243e32ce3ba89b3c358a5f78727b3732f11))
+
+### Features
+
+- migrate to PostCSS 8 ([#975](https://github.com/cssnano/cssnano/issues/975)) ([40b82dc](https://github.com/cssnano/cssnano/commit/40b82dca7f53ac02cd4fe62846dec79b898ccb49))
+- **postcss-merge-rules:** merge at-rules ([#722](https://github.com/cssnano/cssnano/issues/722)) ([8d4610a](https://github.com/cssnano/cssnano/commit/8d4610a6391ddab29bcb08ef0522d0b7ce2d6582))
+
+### BREAKING CHANGES
+
+- minimum supported `postcss` version is `8.2.1`
+- minimum require version of node is 10.13
+
+## 4.1.9 (2019-02-12)
+
+### Performance Improvements
+
+- **postcss-merge-rules:** increase perf ([#681](https://github.com/cssnano/cssnano/issues/681)) ([35bad2b](https://github.com/cssnano/cssnano/commit/35bad2b70fca5390c88eaabc24c25bb8d28b2f95))
+
+## 4.1.1 (2018-09-24)
+
+### Bug Fixes
+
+- handle uppercase `all` property in merge rules ([#611](https://github.com/cssnano/cssnano/issues/611)) ([0dfe335](https://github.com/cssnano/cssnano/commit/0dfe3355951fa4a080a04dca34c6d99420def7ac))
+- merge same atrules with difference case ([#605](https://github.com/cssnano/cssnano/issues/605)) ([ca350fd](https://github.com/cssnano/cssnano/commit/ca350fda779bab5ca2eadf70299d92f8e495a273))
+- **postcss-merge-longhand:** not mangle border output ([#555](https://github.com/cssnano/cssnano/issues/555)) ([9a70605](https://github.com/cssnano/cssnano/commit/9a706050b621e7795a9bf74eb7110b5c81804ffe)), closes [#553](https://github.com/cssnano/cssnano/issues/553) [#554](https://github.com/cssnano/cssnano/issues/554)
